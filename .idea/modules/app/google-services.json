@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "68293662564",
+    "firebase_url": "https://donationapp-384da.firebaseio.com",
+    "project_id": "donationapp-384da",
+    "storage_bucket": "donationapp-384da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68293662564:android:c2cf6def69b7068e8f8c71",
+        "android_client_info": {
+          "package_name": "com.grad.graduationproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "68293662564-k220mtshc510e2bq0hldr5tf2517sau3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.grad.graduationproject",
+            "certificate_hash": "d38928795cb30d241e64e8ed2ece2d29f06cddc6"
+          }
+        },
+        {
+          "client_id": "68293662564-m6gud9hkjmc4eauu3utls8dnk8d6ir3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzihEfKILDgM45qRw7bwNtNFKFLi0eLTA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "68293662564-m6gud9hkjmc4eauu3utls8dnk8d6ir3s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

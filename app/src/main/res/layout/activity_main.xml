@@ -124,19 +124,18 @@
 
 
                         <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/rvSuggestions"
+                            android:id="@+id/rv_category"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             app:layout_constraintEnd_toEndOf="@id/guideline2"
+                            app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="@id/guideline"
-
-                            app:layout_constraintTop_toTopOf="parent">
-                            <!--                            tools:listitem="@layout/item_suggested_event"-->
-                            <!--                            >-->
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:listitem="@layout/item_category"
+                            >
 
                         </androidx.recyclerview.widget.RecyclerView>
-
 
                         <androidx.constraintlayout.widget.Guideline
                             android:id="@+id/guideline"

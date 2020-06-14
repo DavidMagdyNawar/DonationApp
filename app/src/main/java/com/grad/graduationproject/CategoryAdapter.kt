@@ -1,7 +1,6 @@
 package com.grad.graduationproject
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -42,5 +41,10 @@ class CategoryAdapter(
         position: Int
     ) {
         holder.bindData(categoryList[position])
+    }
+
+    fun filterList(filteredList: ArrayList<Category>) {
+        categoryList = filteredList
+        notifyDataSetChanged()
     }
 }

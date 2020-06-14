@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">community</string>
+    <string name="app_name">donation app</string>
     <string name="welcomeMessage">What are you up for, Kate?</string>
     <string name="events">There are happening 87 events around you today.</string>
     <string name="welcome">Hi Mark</string>

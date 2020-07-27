@@ -1,10 +1,12 @@
-package com.grad.graduationproject
+package com.grad.graduationproject.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.grad.graduationproject.Category
+import com.grad.graduationproject.R
 import kotlinx.android.synthetic.main.item_category.view.*
 
 
@@ -30,7 +32,7 @@ class CategoryAdapter(
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_category , parent, false)
+            .inflate(R.layout.item_category, parent, false)
         return CategoryViewHolder(itemView)
     }
     override fun getItemCount(): Int {

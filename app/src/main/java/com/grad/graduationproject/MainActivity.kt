@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
+import com.grad.graduationproject.adapter.CategoryAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -29,7 +30,10 @@ class MainActivity : AppCompatActivity() {
 
         layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
         rv_category.layoutManager = layoutManager
-        categoryAdapter = CategoryAdapter(categoryList, applicationContext)
+        categoryAdapter = CategoryAdapter(
+            categoryList,
+            applicationContext
+        )
         rv_category.adapter = categoryAdapter
 
         val categoriesLiveData = viewModel.getCategories()

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_category.view.*
 
 
@@ -16,17 +17,14 @@ class CategoryAdapter(
     inner class CategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bindData(category: Category) {
             itemView.categoryName.text = category.name
+
+            Glide
+                .with(context)
+                .load(category.image)
+                .centerCrop()
+                .into(itemView.categoryImage);
         }
-//        init {
-//            itemView.setOnClickListener {
-//                onItemClick?.invoke(categoryList[adapterPosition])
-//                var intent = Intent(
-//                    context,
-//                    EventActivity::class.java
-//                )
-//                context.startActivity(intent)
-//            }
-//        }
+
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val itemView = LayoutInflater.from(parent.context)

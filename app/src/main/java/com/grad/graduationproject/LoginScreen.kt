@@ -17,7 +17,7 @@ class LoginScreen : AppCompatActivity() {
             val intent = Intent(this@LoginScreen, SignUp::class.java)
             startActivity(intent)
         }
-        var auth: FirebaseAuth = FirebaseAuth.getInstance()
+        val auth: FirebaseAuth = FirebaseAuth.getInstance()
         var user: FirebaseUser? = auth.currentUser
 
 

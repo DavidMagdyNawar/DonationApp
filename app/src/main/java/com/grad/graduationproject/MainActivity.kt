@@ -1,6 +1,5 @@
 package com.grad.graduationproject
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -10,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
+import com.grad.graduationproject.model.Category
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -43,7 +43,8 @@ class MainActivity : AppCompatActivity() {
                 categoryList.clear()
                 val d = dataSnapshot!!.children
                 d.forEach {
-                    val cat: Category? = it.getValue(Category::class.java)
+                    val cat: Category? = it.getValue(
+                        Category::class.java)
                     if (cat != null) {
                         categoryList.add(cat)
                     }

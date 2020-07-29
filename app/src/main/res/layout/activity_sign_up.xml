@@ -96,6 +96,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/signupCard"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_marginStart="16dp"

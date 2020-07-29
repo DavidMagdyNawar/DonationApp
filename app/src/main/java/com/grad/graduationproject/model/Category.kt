@@ -1,4 +1,4 @@
-package com.grad.graduationproject
+package com.grad.graduationproject.model
 
 
 data class Category(

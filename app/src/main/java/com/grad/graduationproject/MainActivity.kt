@@ -1,5 +1,6 @@
 package com.grad.graduationproject
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -56,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        categorySearch.addTextChangedListener(object :TextWatcher{
+        categorySearch.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 filter(s.toString());
 

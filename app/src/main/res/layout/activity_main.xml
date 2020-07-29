@@ -50,7 +50,7 @@
                     android:layout_marginBottom="8dp"
                     android:background="@color/colorPrimary"
                     android:scaleType="centerCrop"
-                    android:text="@string/welcome"
+                    android:text="Hi"
                     android:textSize="42sp"
                     app:layout_collapseMode="parallax" />
 

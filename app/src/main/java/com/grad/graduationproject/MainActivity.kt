@@ -1,5 +1,6 @@
 package com.grad.graduationproject
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -9,7 +10,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
-import com.grad.graduationproject.adapter.CategoryAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        categorySearch.addTextChangedListener(object :TextWatcher{
+        categorySearch.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 filter(s.toString());
 

@@ -1,5 +1,6 @@
 package com.grad.graduationproject
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -50,6 +51,11 @@ class MainActivity : AppCompatActivity() {
                 categoryAdapter.notifyDataSetChanged()
             }
         )
+
+        fab_add.setOnClickListener {
+            val intent = Intent(this, AddItem::class.java)
+            startActivity(intent)
+        }
 
         categorySearch.addTextChangedListener(object :TextWatcher{
             override fun afterTextChanged(s: Editable?) {

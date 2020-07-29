@@ -5,4 +5,15 @@
     <string name="welcome">Hi Mark</string>
     <string name="descriptionText"><![CDATA[Long time no see, folks! \nSince it has been already a year, we finally have a reason to meet up again. Join our legendary YF Aftershow Party for some boozy drinks & funky tunes.  See you there.]]></string>
     <string name="search">What are you looking for ?</string>
+
+
+    <string-array name="category_arrays">
+        <item>clothes</item>
+        <item>electronics</item>
+        <item>food supplies</item>
+        <item>home appliances</item>
+        <item>kids toys</item>
+    </string-array>
+
+
 </resources>

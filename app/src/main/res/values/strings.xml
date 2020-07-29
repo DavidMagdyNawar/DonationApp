@@ -5,6 +5,8 @@
     <string name="welcome">Hi Mark</string>
     <string name="descriptionText"><![CDATA[Long time no see, folks! \nSince it has been already a year, we finally have a reason to meet up again. Join our legendary YF Aftershow Party for some boozy drinks & funky tunes.  See you there.]]></string>
     <string name="search">What are you looking for ?</string>
+    <string name="don_t_have_an_account_sign_up"><u>Don\'t have an account? SIGN UP</u></string>
+    <string name="haveaccount"><u>Already have an account? LOGIN</u></string>
 
 
     <string-array name="category_arrays">

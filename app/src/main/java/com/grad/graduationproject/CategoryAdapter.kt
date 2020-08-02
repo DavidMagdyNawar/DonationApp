@@ -1,13 +1,14 @@
 package com.grad.graduationproject
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.grad.graduationproject.model.Category
-import kotlinx.android.synthetic.main.item_category.view.*
+import kotlinx.android.synthetic.main.category_item.view.*
 
 
 class CategoryAdapter(
@@ -29,7 +30,7 @@ class CategoryAdapter(
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_category , parent, false)
+            .inflate(R.layout.category_item , parent, false)
         return CategoryViewHolder(itemView)
     }
     override fun getItemCount(): Int {
@@ -40,6 +41,13 @@ class CategoryAdapter(
         position: Int
     ) {
         holder.bindData(categoryList[position])
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, ItemsDetails::class.java)
+            intent.putExtra("name", categoryList[position].name)
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent)
+            categoryList[position].items
+        }
     }
 
     fun filterList(filteredList: ArrayList<Category>) {

@@ -1,5 +1,6 @@
 package com.grad.graduationproject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -53,5 +54,11 @@ class ItemsDetails : AppCompatActivity() {
                 itemAdapter.notifyDataSetChanged()
             }
         )
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }

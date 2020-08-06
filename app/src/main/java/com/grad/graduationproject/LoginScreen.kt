@@ -36,8 +36,7 @@ class LoginScreen : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
                             val intent = Intent(this@LoginScreen, MainActivity::class.java)
-                            intent.flags =
-                                intent.flags or Intent.FLAG_ACTIVITY_NO_HISTORY // Adds the FLAG_ACTIVITY_NO_HISTORY flag
+                            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP // Adds the FLAG_ACTIVITY_NO_HISTORY flag
                             startActivity(intent)
                             user = auth.currentUser
 
@@ -66,5 +65,10 @@ class LoginScreen : AppCompatActivity() {
             valid = true
 
         return valid
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
     }
 }

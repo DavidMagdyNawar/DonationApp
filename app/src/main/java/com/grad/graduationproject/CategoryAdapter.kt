@@ -31,7 +31,9 @@ class CategoryAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.category_item , parent, false)
-        return CategoryViewHolder(itemView)
+        return CategoryViewHolder(itemView).listen { pos, type ->
+            val cat = categoryList[pos]
+        }
     }
     override fun getItemCount(): Int {
         return categoryList.size
@@ -41,17 +43,30 @@ class CategoryAdapter(
         position: Int
     ) {
         holder.bindData(categoryList[position])
-        holder.itemView.setOnClickListener {
-            val intent = Intent(context, ItemsDetails::class.java)
-            intent.putExtra("name", categoryList[position].name)
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent)
-            categoryList[position].items
-        }
+//        holder.itemView.setOnClickListener {
+//
+//                val intent = Intent(context, ItemsDetails::class.java)
+////                intent.putExtra("name", categoryList[position].name)
+////                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                context.startActivity(intent)
+//                categoryList[position].items
+//            }
+
     }
 
     fun filterList(filteredList: ArrayList<Category>) {
         categoryList = filteredList
         notifyDataSetChanged()
+    }
+    fun <T : RecyclerView.ViewHolder> T.listen(event: (position: Int, type: Int) -> Unit): T {
+        itemView.setOnClickListener {
+            val intent = Intent(context, ItemsDetails::class.java)
+                intent.putExtra("name", categoryList[adapterPosition].name)
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent)
+                categoryList[adapterPosition].items
+//            event.invoke(adapterPosition, itemViewType)
+        }
+        return this
     }
 }

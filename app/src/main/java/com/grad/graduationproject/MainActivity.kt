@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.grad.graduationproject.model.Category
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,11 +22,13 @@ class MainActivity : AppCompatActivity() {
     private var categoryList: MutableList<Category> = mutableListOf()
     private lateinit var viewModel: CategoriesViewModel
     private lateinit var categoryAdapter: CategoryAdapter
+    val auth: FirebaseAuth = FirebaseAuth.getInstance()
+    var user: FirebaseUser? = auth.currentUser
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         viewModel = ViewModelProviders.of(this).get(
             CategoriesViewModel::class.java
         )
@@ -44,7 +48,8 @@ class MainActivity : AppCompatActivity() {
                 val d = dataSnapshot!!.children
                 d.forEach {
                     val cat: Category? = it.getValue(
-                        Category::class.java)
+                        Category::class.java
+                    )
                     if (cat != null) {
                         categoryList.add(cat)
                     }
@@ -96,5 +101,8 @@ class MainActivity : AppCompatActivity() {
 //
 //    })
 
-
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
+    }
 }
